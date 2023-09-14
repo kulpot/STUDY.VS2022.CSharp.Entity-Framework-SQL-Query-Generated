@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 
 //ref link:https://www.youtube.com/watch?v=ZCBIoI5qz4M&list=PLRwVmtr-pp06bXl6mbwDfK1eW9sAIvWUZ&index=2
-//
+// EntityFramework - is a object relational mapping(ORM) data tool
 
 class Video
 {
@@ -14,7 +14,8 @@ class Video
 
 class MeContext : DbContext
 {
-    public MeContext() : base(@"Data Source=.;Initial Catalog=KulpotDB;Integrated Security=True")
+    //public MeContext() : base(@"Data Source=.;Initial Catalog=KulpotDB;Integrated Security=True")
+    public MeContext() : base(@"Data Source=.;Initial Catalog=MyTestDb;Integrated Security=True")
     {
 
     }
@@ -31,7 +32,10 @@ class MainClass
             Description = "Learn about the entity framework"
         };
         var meContext = new MeContext();
-        meContext.Videos.Add(vid);
-        meContext.SaveChanges();
+
+        meContext.Database.Delete();
+
+        //meContext.Videos.Add(vid);
+        //meContext.SaveChanges();
     }
 }
