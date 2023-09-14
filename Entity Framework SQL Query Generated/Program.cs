@@ -4,6 +4,8 @@ using System.Data.Entity;
 
 //ref link:https://www.youtube.com/watch?v=ZCBIoI5qz4M&list=PLRwVmtr-pp06bXl6mbwDfK1eW9sAIvWUZ&index=2
 // EntityFramework - is a object relational mapping(ORM) data tool
+// SQL Server Management Studio - Database app
+// SQL Server Profiler - app for tracing SQL Database
 
 class Video
 {
@@ -33,9 +35,9 @@ class MainClass
         };
         var meContext = new MeContext();
 
-        meContext.Database.Delete();
+       //meContext.Database.Delete();
 
-        //meContext.Videos.Add(vid);
-        //meContext.SaveChanges();
+        meContext.Videos.Add(vid);
+        meContext.SaveChanges();
     }
 }
